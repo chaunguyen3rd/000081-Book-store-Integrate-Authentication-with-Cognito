@@ -22,23 +22,23 @@ Ensure you have the AWS CLI and SAM CLI installed on your machine, configure AWS
     ```
 
 3. Enter the following content. Leave as default.
-   - Stack Name []: `fcj-book-store`
-   - AWS Region []: `us-east-1`
-   - Confirm changes before deploy [Y/n]: y
-   - Allow SAM CLI IAM role creation [Y/n]: y
-   - Disable rollback [y/N]: n
-   - Save arguments to configuration file [Y/n]: y
-    ![Preparation](/images/temp/1/1.png?width=90pc)
+    - Stack Name []: `fcj-book-store`
+    - AWS Region []: `us-east-1`
+    - Confirm changes before deploy [Y/n]: y
+    - Allow SAM CLI IAM role creation [Y/n]: y
+    - Disable rollback [y/N]: n
+    - Save arguments to configuration file [Y/n]: y
+      ![Preparation](/images/temp/1/1.png?width=90pc)
 
 4. Download the **FCJ-Serverless-Workshop** code to your device.
-   - Open a terminal on your computer in the folder where you want to save the source code.
-   - Copy the below command.
+    - Open a terminal on your computer in the folder where you want to save the source code.
+    - Copy the below command.
       ```
       git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
       cd FCJ-Serverless-Workshop
       ```
-   - Open **FCJ-Serverless-Workshop** with VSCode and edit.
-     - Open **src/component/Authen/Login.js** and edit as below.
+    - Open **FCJ-Serverless-Workshop** with VSCode and edit.
+      - Open **src/component/Authen/Login.js** and edit as below.
         ```
         data: JSON.stringify({
             username: email,
@@ -46,7 +46,7 @@ Ensure you have the AWS CLI and SAM CLI installed on your machine, configure AWS
         })
         ```
         ![Preparation](/images/temp/1/2.png?width=90pc)
-     - Next, open **src/component/Authen/Register.js** and edit as below.
+      - Next, open **src/component/Authen/Register.js** and edit as below.
         ```
         data: JSON.stringify({
             username: email,
@@ -54,7 +54,7 @@ Ensure you have the AWS CLI and SAM CLI installed on your machine, configure AWS
         })
         ```
         ![Preparation](/images/temp/1/3.png?width=90pc)
-   - Back to **FCJ-Serverless-Workshop** root path and run the commands below.
+    - Back to **FCJ-Serverless-Workshop** root path and run the commands below.
       ```
       yarn
       yarn build
