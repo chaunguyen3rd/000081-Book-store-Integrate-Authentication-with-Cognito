@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Test with front-end on SERVERLESS - AUTHENTICATION WITH AMAZON COGNITO</title>
-    <link>/4-test-front-end/</link>
+    <link>//localhost:1313/4-test-front-end/</link>
     <description>Recent content in Test with front-end on SERVERLESS - AUTHENTICATION WITH AMAZON COGNITO</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/4-test-front-end/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/4-test-front-end/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

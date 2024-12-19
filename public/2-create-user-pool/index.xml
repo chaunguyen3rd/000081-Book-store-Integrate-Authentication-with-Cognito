@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Create User Pool on SERVERLESS - AUTHENTICATION WITH AMAZON COGNITO</title>
-    <link>/2-create-user-pool/</link>
+    <link>//localhost:1313/2-create-user-pool/</link>
     <description>Recent content in Create User Pool on SERVERLESS - AUTHENTICATION WITH AMAZON COGNITO</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/2-create-user-pool/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/2-create-user-pool/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Serverless - Xác thực với Amazon Cognito :: SERVERLESS - XÁC THỰC VỚI AMAZON COGNITO</title>
 
     
-    <link href="/css/nucleus.css?1715874527" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1715874527" rel="stylesheet">
-    <link href="/css/hybrid.css?1715874527" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1715874527" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1715874527" rel="stylesheet">
-    <link href="/css/auto-complete.css?1715874527" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1715874527" rel="stylesheet">
-    <link href="/css/theme.css?1715874527" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1715874527" rel="stylesheet">
+    <link href="/css/nucleus.css?1734581571" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734581571" rel="stylesheet">
+    <link href="/css/hybrid.css?1734581571" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734581571" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734581571" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734581571" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734581571" rel="stylesheet">
+    <link href="/css/theme.css?1734581571" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734581571" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1715874527" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734581571" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1715874527"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734581571"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1715874527"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1715874527"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734581571"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734581571"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1715874527"></script>
+<script type="text/javascript" src="/js/search.js?1734581571"></script>
 
     
   </div>
@@ -243,7 +243,7 @@
                   
                     
                     
-                      <option id="en" value="/">English</option>
+                      <option id="en" value="//localhost:1313/">English</option>
                     
                   
               
@@ -257,7 +257,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/" selected>Tiếng Việt</option>
                     
                   
               
@@ -339,7 +339,7 @@
 <h4 id="tổng-quan">Tổng quan</h4>
 <p>Chúng ta đã đi qua 3 bài và xây dựng một ứng dụng web đơn giản với mô hình serverless trên cloud. Để ứng dụng web của chúng ta xác thực, các chức năng chỉ được sử dụng khi người dùng đã đăng nhập. Do đó bài này chúng ta sẽ tìm hiểu về AWS Cognito - cung cấp xác thực, ủy quyền và quản lý người dùng cho ứng dụng web và di động.</p>
 <p>Kiến trúc của ứng dụng web sẽ như sau:
-<img src="/images/serverless-diagram.png?featherlight=false&amp;width=50pc" alt="SeverlessExample"></p>
+<img alt="SeverlessExample" src="/images/serverless-diagram.png?featherlight=false&width=50pc"></p>
 <h4 id="aws-cognito">AWS Cognito</h4>
 <p>AWS Cognito cho phép chúng ta trong việc xây dựng luồng sign-in, sign-up, verify email, thay đổi password, đặt lại password,&hellip; một cách dễ dàng hơn, thay vì ta phải tự xây dựng DB cho user và tự làm nhiều thứ như JWT, hash password, send mail verify,&hellip; Điều này giúp bạn tập chung vào phát triển tính năng khác của ứng dụng. Người dùng có thể đăng nhập trực tiếp bằng tên người dùng và mật khẩu hoặc thông qua bên thứ ba như Facebook, Amazon, Google hoặc Apple.</p>
 <p>Hai thành phần chính của Amazon Cognito là User pools and Identity pools:</p>
@@ -348,7 +348,7 @@
 <li>Identity pools: cung cấp thông tin xác thực AWS để cấp cho người dùng của bạn quyền truy cập vào các dịch vụ AWS khác.</li>
 </ul>
 <p>Ví dụ sử dụng user pool và identity pool cùng nhau</p>
-<p><img src="/images/0001.jpeg?featherlight=false&amp;width=60pc" alt="ScenarioCognito"></p>
+<p><img alt="ScenarioCognito" src="/images/0001.jpeg?featherlight=false&width=60pc"></p>
 <ul>
 <li>Trong bước đầu tiên, người dùng ứng dụng của bạn đăng nhập thông qua user pool và nhận mã thông báo user pool sdùng sau khi xác thực thành công.</li>
 <li>Tiếp theo, ứng dụng của bạn trao đổi mã thông báo user pool dùng lấy thông tin đăng nhập AWS thông qua nhóm nhận dạng.</li>
@@ -356,11 +356,11 @@
 </ul>
 <h4 id="nội-dung">Nội dung</h4>
 <ol>
-<li><a href="1-preparation/">Chuẩn bị</a></li>
-<li><a href="2-create-user-pool/">Tạo User Pool</a></li>
-<li><a href="3-create-api-and-lambda-function/">Tạo API và Lambda function</a></li>
-<li><a href="4-test-front-end">Kiểm tra với front-end</a></li>
-<li><a href="5-cleanup">Dọn dẹp tài nguyên</a></li>
+<li><a href="/vi/1-preparation/">Chuẩn bị</a></li>
+<li><a href="/vi/2-create-user-pool/">Tạo User Pool</a></li>
+<li><a href="/vi/3-create-api-and-lambda-function/">Tạo API và Lambda function</a></li>
+<li><a href="/vi/4-test-front-end/">Kiểm tra với front-end</a></li>
+<li><a href="/vi/5-cleanup/">Dọn dẹp tài nguyên</a></li>
 </ol>
 	
   
@@ -493,19 +493,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1715874527"></script>
-    <script src="/js/perfect-scrollbar.min.js?1715874527"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1715874527"></script>
-    <script src="/js/jquery.sticky.js?1715874527"></script>
-    <script src="/js/featherlight.min.js?1715874527"></script>
-    <script src="/js/highlight.pack.js?1715874527"></script>
+    <script src="/js/clipboard.min.js?1734581571"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734581571"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734581571"></script>
+    <script src="/js/jquery.sticky.js?1734581571"></script>
+    <script src="/js/featherlight.min.js?1734581571"></script>
+    <script src="/js/highlight.pack.js?1734581571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1715874527"></script>
-    <script src="/js/learn.js?1715874527"></script>
-    <script src="/js/hugo-learn.js?1715874527"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734581571"></script>
+    <script src="/js/learn.js?1734581571"></script>
+    <script src="/js/hugo-learn.js?1734581571"></script>
 
-    <link href="/mermaid/mermaid.css?1715874527" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1715874527"></script>
+    <link href="/mermaid/mermaid.css?1734581571" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734581571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

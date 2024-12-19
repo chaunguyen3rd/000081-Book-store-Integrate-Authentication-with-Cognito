@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="vi" class="js csstransforms3d">
-  <head>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="generator" content="Hugo 0.122.0">
+    <meta name="generator" content="Hugo 0.133.0">
     <meta name="description" content="">
 <meta name="author" content="journeyoftheaverageguy@gmail.com">
 
@@ -12,21 +12,21 @@
     <title>Kiểm tra hoạt động :: SERVERLESS - XÁC THỰC VỚI AMAZON COGNITO</title>
 
     
-    <link href="/css/nucleus.css?1715874527" rel="stylesheet">
-    <link href="/css/fontawesome-all.min.css?1715874527" rel="stylesheet">
-    <link href="/css/hybrid.css?1715874527" rel="stylesheet">
-    <link href="/css/featherlight.min.css?1715874527" rel="stylesheet">
-    <link href="/css/perfect-scrollbar.min.css?1715874527" rel="stylesheet">
-    <link href="/css/auto-complete.css?1715874527" rel="stylesheet">
-    <link href="/css/atom-one-dark-reasonable.css?1715874527" rel="stylesheet">
-    <link href="/css/theme.css?1715874527" rel="stylesheet">
-    <link href="/css/hugo-theme.css?1715874527" rel="stylesheet">
+    <link href="/css/nucleus.css?1734581571" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1734581571" rel="stylesheet">
+    <link href="/css/hybrid.css?1734581571" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1734581571" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1734581571" rel="stylesheet">
+    <link href="/css/auto-complete.css?1734581571" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1734581571" rel="stylesheet">
+    <link href="/css/theme.css?1734581571" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1734581571" rel="stylesheet">
     
-    <link href="/css/theme-workshop.css?1715874527" rel="stylesheet">
+    <link href="/css/theme-workshop.css?1734581571" rel="stylesheet">
     
     
 
-    <script src="/js/jquery-3.3.1.min.js?1715874527"></script>
+    <script src="/js/jquery-3.3.1.min.js?1734581571"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/js/lunr.min.js?1715874527"></script>
-<script type="text/javascript" src="/js/auto-complete.js?1715874527"></script>
+<script type="text/javascript" src="/js/lunr.min.js?1734581571"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1734581571"></script>
 <script type="text/javascript">
     
-        var baseurl = "\/vi";
+        var baseurl = "\/\/localhost:1313\/\/vi";
     
 </script>
-<script type="text/javascript" src="/js/search.js?1715874527"></script>
+<script type="text/javascript" src="/js/search.js?1734581571"></script>
 
     
   </div>
@@ -243,7 +243,7 @@
                   
                     
                     
-                      <option id="en" value="/4-test-front-end/">English</option>
+                      <option id="en" value="//localhost:1313/4-test-front-end/">English</option>
                     
                   
               
@@ -257,7 +257,7 @@
                   
                     
                     
-                      <option id="vi" value="/vi/4-test-front-end/" selected>Tiếng Việt</option>
+                      <option id="vi" value="//localhost:1313/vi/4-test-front-end/" selected>Tiếng Việt</option>
                     
                   
               
@@ -392,7 +392,7 @@
 <ul>
 <li>Ấn <strong>staging</strong></li>
 <li>Ghi lại <strong>InvokeURL</strong>
-<img src="/images/1/23.png?width=90pc" alt="UpdateSource"></li>
+<img alt="UpdateSource" src="/images/1/23.png?width=90pc"></li>
 </ul>
 </li>
 <li>
@@ -408,15 +408,15 @@
 </code></pre></li>
 <li>
 <p>Mở bảng điều khiển <a href="https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1">Amazon S3</a>. Ấn chọn bucket <strong>fcj-book-store</strong>
-<img src="/images/1/24.png?width=90pc" alt="UpdateSource"></p>
+<img alt="UpdateSource" src="/images/1/24.png?width=90pc"></p>
 </li>
 <li>
 <p>Chọn tab <strong>Properties</strong>. Kéo xuống cuối tramg, nhấn vào endpoint của web
-<img src="/images/1/25.png?width=90pc" alt="UpdateSource"></p>
+<img alt="UpdateSource" src="/images/1/25.png?width=90pc"></p>
 </li>
 <li>
 <p>Ấn <strong>Register</strong> góc bên phải
-<img src="/images/1/26.png?width=90pc" alt="UpdateSource"></p>
+<img alt="UpdateSource" src="/images/1/26.png?width=90pc"></p>
 </li>
 <li>
 <p>Nhập thông tin đăng ký email, mật khẩu và nhập lại mật khẩu</p>
@@ -428,7 +428,7 @@
 <p>Bạn sẽ gặp thông báo <strong>Register fail</strong></p>
 <ul>
 <li>Lỗi do API của chúng ta thiếu <strong>Access-Control-Allow-Headers</strong> trong headers của phản hồi
-<img src="/images/1/27.png?width=90pc" alt="UpdateSource">
+<img alt="UpdateSource" src="/images/1/27.png?width=90pc">
 
 <div class="notices note" ><p>Đăng ký bằng email mà bạn đang dùng để có thể lấy được code xác thực tài khoản</p>
 </div>
@@ -443,7 +443,7 @@
 <pre tabindex="0"><code>   AllowMethods: &#34;&#39;GET,POST,OPTIONS,DELETE&#39;&#34;
    AllowHeaders: &#34;&#39;content-type&#39;&#34;
    AllowOrigin: &#34;&#39;*&#39;&#34;
-</code></pre><p><img src="/images/1/28.png?width=90pc" alt="UpdateSource"></p>
+</code></pre><p><img alt="UpdateSource" src="/images/1/28.png?width=90pc"></p>
 <ul>
 <li>Chạy các câu lệnh sau:</li>
 </ul>
@@ -452,13 +452,13 @@ sam deploy --guided
 </code></pre></li>
 <li>
 <p>Quay lại màn hình đăng ký và ấn <strong>Register</strong>
-<img src="/images/1/29.png?width=90pc" alt="UpdateSource"></p>
+<img alt="UpdateSource" src="/images/1/29.png?width=90pc"></p>
 </li>
 <li>
 <p>Trở lại với bảng điều khiển của Amazon Cognito</p>
 <ul>
 <li>Tại tab <strong>Users</strong>, xuất hiên một người dùng nhưng vẫn ở trạng thái <strong>Unconfirmed</strong>
-<img src="/images/1/30.png?width=90pc" alt="UpdateSource"></li>
+<img alt="UpdateSource" src="/images/1/30.png?width=90pc"></li>
 </ul>
 </li>
 <li>
@@ -468,26 +468,26 @@ sam deploy --guided
 <p>Nhập mã xác nhận vào màn hình xác thực</p>
 <ul>
 <li>Ấn <strong>Submit</strong>
-<img src="/images/1/31.png?width=90pc" alt="UpdateSource"></li>
+<img alt="UpdateSource" src="/images/1/31.png?width=90pc"></li>
 </ul>
 </li>
 <li>
 <p>Trở lại với bảng điều khiển của Amazon Cognito</p>
 <ul>
 <li>Người dùng đã chuyển sang trạng thái <strong>Confirmed</strong>
-<img src="/images/1/32.png?width=90pc" alt="UpdateSource"></li>
+<img alt="UpdateSource" src="/images/1/32.png?width=90pc"></li>
 </ul>
 </li>
 <li>
 <p>Nhập thông tin tài khoản: email, mật khẩu để đăng nhập</p>
 <ul>
 <li>Ấn <strong>Submit</strong>
-<img src="/images/1/33.png?width=90pc" alt="UpdateSource"></li>
+<img alt="UpdateSource" src="/images/1/33.png?width=90pc"></li>
 </ul>
 </li>
 <li>
 <p>Sau khi đăng nhập thành công, các tính năng: <strong>Create new book</strong>, <strong>Management</strong>, <strong>Order</strong> xuất hiện cho phép người dùng sử dụng
-<img src="/images/1/34.png?width=90pc" alt="UpdateSource"></p>
+<img alt="UpdateSource" src="/images/1/34.png?width=90pc"></p>
 </li>
 </ol>
 
@@ -634,19 +634,19 @@ sam deploy --guided
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/js/clipboard.min.js?1715874527"></script>
-    <script src="/js/perfect-scrollbar.min.js?1715874527"></script>
-    <script src="/js/perfect-scrollbar.jquery.min.js?1715874527"></script>
-    <script src="/js/jquery.sticky.js?1715874527"></script>
-    <script src="/js/featherlight.min.js?1715874527"></script>
-    <script src="/js/highlight.pack.js?1715874527"></script>
+    <script src="/js/clipboard.min.js?1734581571"></script>
+    <script src="/js/perfect-scrollbar.min.js?1734581571"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1734581571"></script>
+    <script src="/js/jquery.sticky.js?1734581571"></script>
+    <script src="/js/featherlight.min.js?1734581571"></script>
+    <script src="/js/highlight.pack.js?1734581571"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/js/modernizr.custom-3.6.0.js?1715874527"></script>
-    <script src="/js/learn.js?1715874527"></script>
-    <script src="/js/hugo-learn.js?1715874527"></script>
+    <script src="/js/modernizr.custom-3.6.0.js?1734581571"></script>
+    <script src="/js/learn.js?1734581571"></script>
+    <script src="/js/hugo-learn.js?1734581571"></script>
 
-    <link href="/mermaid/mermaid.css?1715874527" rel="stylesheet" />
-    <script src="/mermaid/mermaid.js?1715874527"></script>
+    <link href="/mermaid/mermaid.css?1734581571" rel="stylesheet" />
+    <script src="/mermaid/mermaid.js?1734581571"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Create API and Lambda function on SERVERLESS - AUTHENTICATION WITH AMAZON COGNITO</title>
-    <link>/3-create-api-and-lambda-function/</link>
+    <link>//localhost:1313/3-create-api-and-lambda-function/</link>
     <description>Recent content in Create API and Lambda function on SERVERLESS - AUTHENTICATION WITH AMAZON COGNITO</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/3-create-api-and-lambda-function/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="//localhost:1313/3-create-api-and-lambda-function/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
