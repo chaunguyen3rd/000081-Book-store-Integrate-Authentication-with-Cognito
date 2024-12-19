@@ -10,8 +10,8 @@ chapter : false
 
 We went through 3 workshops and built a simple web application with the serverless model in the cloud. For our web application to authenticate, the functions are only used when the user is logged in. So in this workshop, we'll learn about AWS Cognito - which provides authentication, authorization, and user management for web and mobile applications.
 
-The architecture of the web application will look like this:
-![SeverlessExample](/images/serverless-diagram.png?featherlight=false&width=50pc)
+The architecture of the web application will look like this.
+![ServerlessExample](/images/serverless-diagram.png?featherlight=false&width=50pc) 
 
 
 #### AWS Cognito
