@@ -35,7 +35,7 @@ We will try registration and login from web application to test API Gateway, Lam
       - Scroll down to the bottom and record **Bucket website endpoint** url.
         ![TestFrontEnd](/images/temp/1/31.png?width=90pc)
 
-7. Open your browser with recorded **Bucket website endpoint** url.
+5. Open your browser with recorded **Bucket website endpoint** url.
     - Click **Register**.
       ![TestFrontEnd](/images/temp/1/32.png?width=90pc)
     - At **FCJ Book Store - Register** page.

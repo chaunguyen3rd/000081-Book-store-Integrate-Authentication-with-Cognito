@@ -5,75 +5,52 @@ weight : 4
 chapter : false
 pre : " <b> 4. </b> "
 ---
-Chúng ta sẽ thử đăng ký và đăng nhập từ ứng dụng web để kiểm tra hoạt động của API Gateway, Lambda function và User pool
-1. Mở bảng điều khiển của [API Gateway](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
-      - Ấn vào **API Gateway REST API to Lambda**
+Chúng ta sẽ thử đăng ký và đăng nhập từ ứng dụng web để kiểm tra API Gateway, hàm Lambda và User pool hoạt động.
 
-2. Chọn **Stage** ở menu phía bên trái
-      - Ấn **staging**
-      - Ghi lại **InvokeURL**
-![UpdateSource](/images/1/23.png?width=90pc)
+1. Mở [API Gateway console](https://us-east-1.console.aws.amazon.com/apigateway/main/apis?region=us-east-1).
+    - Nhấp vào **APIs** trên menu bên trái.
+    - Chọn **fcj-serverless-api**.
+      ![TestFrontEnd](/images/temp/1/26.png?width=90pc)
+    - Nhấp vào **Stages** trên menu bên trái.
+    - Chọn **Staging**.
+    - Ghi lại **Invoke URL**.
+      ![TestFrontEnd](/images/temp/1/27.png?width=90pc)
 
-3. Mở tệp **config.js** trong thư mục source code của ứng dụng - **FCJ-Serverless-Workshop**
-      - Thay **APP_API_URL** bằng **InvokeURL**
+2. Mở tệp **config.js** trong thư mục mã nguồn của ứng dụng - **FCJ-Serverless-Workshop**.
+    - Thay thế **APP_API_URL** bằng **InvokeURL**.
+      ![TestFrontEnd](/images/temp/1/28.png?width=90pc)
 
-4. Chạy các dòng lệnh dưới đây:
-   ```
-    yarn build
-    aws s3 cp build s3://fcj-book-store --recursive
+3. Mở terminal của bạn và chạy các lệnh dưới đây.
     ```
-3. Mở bảng điều khiển [Amazon S3](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1). Ấn chọn bucket **fcj-book-store**
-![UpdateSource](/images/1/24.png?width=90pc)
+    yarn build
+    aws s3 cp build s3://fcj-book-shop-by-myself --recursive
+    ```
 
-5. Chọn tab **Properties**. Kéo xuống cuối tramg, nhấn vào endpoint của web
-![UpdateSource](/images/1/25.png?width=90pc)
+4. Mở [Amazon S3 console](https://s3.console.aws.amazon.com/s3/buckets?region=us-east-1). 
+    - Nhấp vào **fcj-book-shop-by-myself** bucket.
+      ![TestFrontEnd](/images/temp/1/29.png?width=90pc)
+    - Tại trang **fcj-book-shop-by-myself**.
+      - Nhấp vào tab **Properties**.
+        ![TestFrontEnd](/images/temp/1/30.png?width=90pc)
+      - Cuộn xuống dưới cùng và ghi lại url **Bucket website endpoint**.
+        ![TestFrontEnd](/images/temp/1/31.png?width=90pc)
 
-7. Ấn **Register** góc bên phải
-![UpdateSource](/images/1/26.png?width=90pc)
-
-8. Nhập thông tin đăng ký email, mật khẩu và nhập lại mật khẩu
-     - Ấn nút **Register**
-9. Bạn sẽ gặp thông báo **Register fail**
-     - Lỗi do API của chúng ta thiếu **Access-Control-Allow-Headers** trong headers của phản hồi
-![UpdateSource](/images/1/27.png?width=90pc)
-{{% notice note %}}
-Đăng ký bằng email mà bạn đang dùng để có thể lấy được code xác thực tài khoản
-{{% /notice %}}
-
-
-10. Để giải quyết lỗi này, mở tệp **template.yaml** trong source của tệp **fcj-book-store-sam-ws3.zip**
-     - Thêm đoạn script sau cho **BookApi**
-     ```
-        AllowMethods: "'GET,POST,OPTIONS,DELETE'"
-        AllowHeaders: "'content-type'"
-        AllowOrigin: "'*'"
-     ```
-      ![UpdateSource](/images/1/28.png?width=90pc)
-
-      - Chạy các câu lệnh sau:
-      ```
-      sam build
-      sam deploy --guided
-      ```
-
-10. Quay lại màn hình đăng ký và ấn **Register**
-![UpdateSource](/images/1/29.png?width=90pc)
-11. Trở lại với bảng điều khiển của Amazon Cognito
-     - Tại tab **Users**, xuất hiên một người dùng nhưng vẫn ở trạng thái **Unconfirmed**
-       ![UpdateSource](/images/1/30.png?width=90pc)
-
-12. Mở email mà bạn vừa đăng ký tài khoản, lấy mã xác nhận được gửi từ **no-reply@verificationemail.com**
-13. Nhập mã xác nhận vào màn hình xác thực
-      - Ấn **Submit**
-![UpdateSource](/images/1/31.png?width=90pc)
-
-14. Trở lại với bảng điều khiển của Amazon Cognito
-      - Người dùng đã chuyển sang trạng thái **Confirmed**
-![UpdateSource](/images/1/32.png?width=90pc)
-
-15. Nhập thông tin tài khoản: email, mật khẩu để đăng nhập
-     - Ấn **Submit**
-![UpdateSource](/images/1/33.png?width=90pc)
-
-16. Sau khi đăng nhập thành công, các tính năng: **Create new book**, **Management**, **Order** xuất hiện cho phép người dùng sử dụng
-![UpdateSource](/images/1/34.png?width=90pc)
+5. Mở trình duyệt của bạn với url **Bucket website endpoint** đã ghi lại.
+    - Nhấp vào **Đăng ký**.
+      ![TestFrontEnd](/images/temp/1/32.png?width=90pc)
+    - Tại trang **FCJ Book Store - Đăng ký**.
+      - Nhập email, mật khẩu và nhập lại mật khẩu của bạn.
+      - Nhấp vào nút **Đăng ký**.
+        ![TestFrontEnd](/images/temp/1/33.png?width=90pc)
+    - Mở hộp thư **Email** của bạn và ghi lại mã xác nhận.
+      ![TestFrontEnd](/images/temp/1/34.png?width=90pc)
+    - Quay lại trang **Xác minh Email**.
+      - Nhập mã **Xác nhận** mà bạn đã ghi lại.
+      - Nhấp vào nút **Gửi**.
+        ![TestFrontEnd](/images/temp/1/35.png?width=90pc)
+    - Sau khi xác minh email thành công, bạn sẽ được chuyển hướng đến trang **FCJ Book Store - Đăng nhập**.
+      - Nhập **Email** và **Mật khẩu** của bạn.
+      - Nhấp vào nút **Gửi**.
+        ![TestFrontEnd](/images/temp/1/36.png?width=90pc)
+    - Sau khi đăng nhập thành công, các tính năng: **Tạo sách mới**, **Quản lý**, **Đặt hàng** sẽ xuất hiện cho phép người dùng sử dụng.
+      ![TestFrontEnd](/images/temp/1/37.png?width=90pc)
