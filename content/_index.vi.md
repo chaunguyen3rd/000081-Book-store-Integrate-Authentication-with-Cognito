@@ -12,7 +12,7 @@ Chúng ta đã đi qua 3 bài và xây dựng một ứng dụng web đơn giả
 
 
 Kiến trúc của ứng dụng web sẽ như sau:
-![SeverlessExample](/images/serverless-diagram.png?featherlight=false&width=50pc)
+![SeverlessExample](/000081-Book-store-Integrate-Authentication-with-Cognito/images/serverless-diagram.png?featherlight=false&width=50pc)
 
 
 
@@ -26,7 +26,7 @@ Hai thành phần chính của Amazon Cognito là User pools and Identity pools:
 
 Ví dụ sử dụng user pool và identity pool cùng nhau
 
-![ScenarioCognito](/images/0001.jpeg?featherlight=false&width=60pc)
+![ScenarioCognito](/000081-Book-store-Integrate-Authentication-with-Cognito/images/0001.jpeg?featherlight=false&width=60pc)
 
 - Trong bước đầu tiên, người dùng ứng dụng của bạn đăng nhập thông qua user pool và nhận mã thông báo user pool sdùng sau khi xác thực thành công.
 - Tiếp theo, ứng dụng của bạn trao đổi mã thông báo user pool dùng lấy thông tin đăng nhập AWS thông qua nhóm nhận dạng.

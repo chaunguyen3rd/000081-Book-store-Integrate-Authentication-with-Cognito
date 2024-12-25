@@ -11,7 +11,7 @@ chapter : false
 We went through 3 workshops and built a simple web application with the serverless model in the cloud. For our web application to authenticate, the functions are only used when the user is logged in. So in this workshop, we'll learn about AWS Cognito - which provides authentication, authorization, and user management for web and mobile applications.
 
 The architecture of the web application will look like this.
-![ServerlessExample](/images/serverless-diagram.png?featherlight=false&width=50pc) 
+![ServerlessExample](/000081-Book-store-Integrate-Authentication-with-Cognito/images/serverless-diagram.png?featherlight=false&width=50pc) 
 
 
 #### AWS Cognito
@@ -24,7 +24,7 @@ The two main components of Amazon Cognito are User pools and Identity pools:
 
 An Amazon Cognito user pool and identity pool used together:
 
-![ScenarioCognito](/images/0001.jpeg?featherlight=false&width=60pc)
+![ScenarioCognito](/000081-Book-store-Integrate-Authentication-with-Cognito/images/0001.jpeg?featherlight=false&width=60pc)
 
 - In the first step your app user signs in through a user pool and receives user pool tokens after a successful authentication.
 - Next, your app exchanges the user pool tokens for AWS credentials through an identity pool.

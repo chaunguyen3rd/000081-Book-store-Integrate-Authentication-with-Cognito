@@ -19,19 +19,19 @@ Sau khi tạo User pool, chúng ta tạo một API và một Lambda function đ�
     Default: APP_CLIENT_SECRET
     ```
   - Thay đổi **APP_CLIENT_ID** và **APP_CLIENT_SECRET** thành giá trị của ứng dụng khách Cognito đã ghi lại trước đó.
-  ![DeployFunction](/images/temp/1/14.png?width=90pc)
+  ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/14.png?width=90pc)
 
 2. Tạo một bản triển khai ``sam`` mới.
   - Mở tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.zip** đã tải xuống trong phần chuẩn bị.
   - Chú thích các khối mã như dưới đây.
-    ![DeployFunction](/images/temp/1/12.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/12.png?width=90pc)
   - Chạy các lệnh dưới đây.     
     ```
     sam build
     sam validate
     sam deploy --guided
     ```
-    ![DeployFunction](/images/temp/1/13.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/13.png?width=90pc)
 
 #### Tạo hàm Registration
 Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.zip** đã tải xuống trong phần chuẩn bị.
@@ -42,7 +42,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
     Type: String
     Default: register
     ```
-    ![DeployFunction](/images/temp/1/21.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/21.png?width=90pc)
 
 2. Tạo hàm **Registration**.
   - Sao chép và dán các khối mã dưới đây vào cuối tệp.
@@ -117,7 +117,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/images/temp/1/16.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/16.png?width=90pc)
 
 3. Cấu trúc thư mục như dưới đây.
       ```
@@ -187,7 +187,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
               print(f"Error registering user: {e}")
               raise Exception(f"Error registering user: {e}")
       ```
-      ![DeployFunction](/images/temp/1/17.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/17.png?width=90pc)
 
 #### Tạo hàm Confirm
 Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.zip** đã tải xuống trong phần chuẩn bị.
@@ -198,7 +198,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
         Type: String
         Default: confirm_user
       ```
-      ![DeployFunction](/images/temp/1/18.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/18.png?width=90pc)
 
 2. Tạo hàm **Confirm**.
     - Sao chép và dán các khối mã dưới đây vào cuối tệp.
@@ -273,7 +273,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/images/temp/1/19.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/19.png?width=90pc)
 
 3. Cấu trúc thư mục như dưới đây.
       ```
@@ -345,7 +345,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
               print(f"Error confirming user: {e}")
               raise Exception(f"Error confirming user: {e}")
       ```
-      ![DeployFunction](/images/temp/1/20.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/20.png?width=90pc)
 
 #### Tạo hàm Login
 Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.zip** đã tải xuống trong phần chuẩn bị.
@@ -356,7 +356,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
         Type: String
         Default: login
       ```
-      ![DeployFunction](/images/temp/1/15.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/15.png?width=90pc)
 
 2. Tạo hàm **Login**.
     - Sao chép và dán các khối mã dưới đây vào cuối tệp.
@@ -431,7 +431,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/images/temp/1/22.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/22.png?width=90pc)
 
 3. Cấu trúc thư mục như dưới đây.
       ```
@@ -511,7 +511,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
               print(f"Error login: {e}")
               raise Exception(f"Error login: {e}")
       ```
-      ![DeployFunction](/images/temp/1/23.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/23.png?width=90pc)
 
 #### Cập nhật tài nguyên Stage và tạo bản Deployment mới
 1. Bỏ chú thích và chỉnh sửa khối mã này.
@@ -535,7 +535,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
         StageName: !Ref stage
         DeploymentId: !Ref BookApiDeployment
     ```
-    ![DeployFunction](/images/temp/1/24.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/24.png?width=90pc)
 
 4. Chạy các lệnh dưới đây. Để mặc định.
     ```
@@ -543,6 +543,6 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
     sam validate
     sam deploy --guided
     ```
-    ![DeployFunction](/images/temp/1/25.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/25.png?width=90pc)
 
 Chúng tôi đã hoàn thành việc triển khai các API và chức năng Lambda.

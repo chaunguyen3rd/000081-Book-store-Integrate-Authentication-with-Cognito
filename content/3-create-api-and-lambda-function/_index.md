@@ -19,19 +19,19 @@ After creating the User pool, we create an API and a Lambda function to handle u
         Default: APP_CLIENT_SECRET
       ```
     - Change **APP_CLIENT_ID** and **APP_CLIENT_SECRET** to the Cognito app clients recorded value before.
-    ![DeployFunction](/images/temp/1/14.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/14.png?width=90pc)
 
 2. Create a new ``sam`` deployment.
     - Open **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
     - Comment the code blocks as below.
-      ![DeployFunction](/images/temp/1/12.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/12.png?width=90pc)
     - Run the below commands.
       ```
       sam build
       sam validate
       sam deploy --guided
       ```
-      ![DeployFunction](/images/temp/1/13.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/13.png?width=90pc)
 
 #### Create Registration function
 At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
@@ -42,7 +42,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
         Type: String
         Default: register
       ```
-      ![DeployFunction](/images/temp/1/21.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/21.png?width=90pc)
 
 2. Create **Registration** function.
     - Copy and paste the below code blocks to the bottom of the file.
@@ -117,7 +117,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/images/temp/1/16.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/16.png?width=90pc)
 
 3. The directory structure is as below.
       ```
@@ -187,7 +187,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
               print(f"Error registering user: {e}")
               raise Exception(f"Error registering user: {e}")
       ```
-      ![DeployFunction](/images/temp/1/17.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/17.png?width=90pc)
 
 #### Create Confirm function
 At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
@@ -198,7 +198,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
         Type: String
         Default: confirm_user
       ```
-      ![DeployFunction](/images/temp/1/18.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/18.png?width=90pc)
 
 2. Create **Confirm** function.
     - Copy and paste the below code blocks to the bottom of the file.
@@ -273,7 +273,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/images/temp/1/19.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/19.png?width=90pc)
 
 3. The directory structure is as below.
       ```
@@ -345,7 +345,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
               print(f"Error confirming user: {e}")
               raise Exception(f"Error confirming user: {e}")
       ```
-      ![DeployFunction](/images/temp/1/20.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/20.png?width=90pc)
 
 #### Create Login function
 At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
@@ -356,7 +356,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
         Type: String
         Default: login
       ```
-      ![DeployFunction](/images/temp/1/15.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/15.png?width=90pc)
 
 2. Create **Login** function.
     - Copy and paste the below code blocks to the bottom of the file.
@@ -431,7 +431,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/images/temp/1/22.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/22.png?width=90pc)
 
 3. The directory structure is as below.
       ```
@@ -511,7 +511,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
               print(f"Error login: {e}")
               raise Exception(f"Error login: {e}")
       ```
-      ![DeployFunction](/images/temp/1/23.png?width=90pc)
+      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/23.png?width=90pc)
 
 #### Update Stage resource and create new Deployment
 1. Uncomment and edit this code block.
@@ -535,7 +535,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
         StageName: !Ref stage
         DeploymentId: !Ref BookApiDeployment
     ```
-    ![DeployFunction](/images/temp/1/24.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/24.png?width=90pc)
 
 4. Run the below commands. Leave as default.
     ```
@@ -543,6 +543,6 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
     sam validate
     sam deploy --guided
     ```
-    ![DeployFunction](/images/temp/1/25.png?width=90pc)
+    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/25.png?width=90pc)
 
 We have completed the implementation of the APIs and Lambda functions.
