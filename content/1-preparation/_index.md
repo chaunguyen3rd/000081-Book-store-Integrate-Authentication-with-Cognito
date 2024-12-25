@@ -49,8 +49,15 @@ Ensure you have the AWS CLI and SAM CLI installed on your machine, configure AWS
       - Next, open **src/component/Authen/Register.js** and edit as below.
         ```
         data: JSON.stringify({
+          username: email,
+          password: password
+        })
+        ```
+
+        ```
+        data: JSON.stringify({
             username: email,
-            code: code
+            confirmation_code: code
         })
         ```
         ![Preparation](/images/temp/1/3.png?width=90pc)

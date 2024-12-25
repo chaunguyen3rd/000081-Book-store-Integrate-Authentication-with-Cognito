@@ -6,72 +6,51 @@ chapter : false
 pre : " <b> 4. </b> "
 ---
 We will try registration and login from web application to test API Gateway, Lambda function and User pool working.
-1. Open [API Gateway console](https://ap-southeast-1.console.aws.amazon.com/apigateway/main/apis?region=ap-southeast-1)
-     - Click **API Gateway REST API to Lambda**
 
-2. Select **Stage** on the left menu
-     - Click **staging**
-     - Record **InvokeURL**
-![UpdateSource](/images/1/23.png?width=90pc)
+1. Open [API Gateway console](https://us-east-1.console.aws.amazon.com/apigateway/main/apis?region=us-east-1).
+    - Click **APIs** on the left menu.
+    - Choose **fcj-serverless-api**.
+      ![TestFrontEnd](/images/temp/1/26.png?width=90pc)
+    - Click **Stages** on the left menu.
+    - Choose **Staging**.
+    - Record **Invoke URL**.
+      ![TestFrontEnd](/images/temp/1/27.png?width=90pc)
 
-3. Open **config.js** file in source code folder of application - **FCJ-Serverless-Workshop**
-     - Replace **APP_API_URL** with **InvokeURL**
-4. Run the below commands:
+2. Open **config.js** file in source code folder of application - **FCJ-Serverless-Workshop**.
+    - Replace **APP_API_URL** with **InvokeURL**.
+      ![TestFrontEnd](/images/temp/1/28.png?width=90pc)
+
+3. Open your terminal and run the below commands.
     ```
-      yarn build
-      aws s3 cp build s3://fcj-book-store --recursive
+    yarn build
+    aws s3 cp build s3://fcj-book-shop-by-myself --recursive
     ```
-3. Open [Amazon S3 console](https://s3.console.aws.amazon.com/s3/buckets?region=ap-southeast-1). Click **fcj-book-store** bucket
-![UpdateSource](/images/1/24.png?width=90pc)
-5. Click **Properties** tab. Scroll down to bottom, click to web endpoint
-![UpdateSource](/images/1/25.png?width=90pc)
 
+4. Open [Amazon S3 console](https://s3.console.aws.amazon.com/s3/buckets?region=us-east-1). 
+    - Click **fcj-book-shop-by-myself** bucket.
+      ![TestFrontEnd](/images/temp/1/29.png?width=90pc)
+    - At **fcj-book-shop-by-myself** page.
+      - Click **Properties** tab.
+        ![TestFrontEnd](/images/temp/1/30.png?width=90pc)
+      - Scroll down to the bottom and record **Bucket website endpoint** url.
+        ![TestFrontEnd](/images/temp/1/31.png?width=90pc)
 
-7. Click **Register** on right corner
-![UpdateSource](/images/1/26.png?width=90pc)
-
-8. Enter registration information: email, password and re-enter password
-      - Click **Register** button
-9. A prompt will appear displaying the **Register fail**
-      - The error due our API missing **Access-Control-Allow-Headers** in response headers
-![UpdateSource](/images/1/27.png?width=90pc)
-{{% notice note %}}
-Register with the email you are using to get the account verification code
-{{% /notice %}}
-
-10. To resolve this error, open **template.yaml** file in source of **fcj-book-store-sam-ws3.zip** file
-      - Add the below script for **BookApi**
-      ```
-        AllowMethods: "'GET,POST,OPTIONS,DELETE'"
-        AllowHeaders: "'content-type'"
-        AllowOrigin: "'*'"
-      ```
-      ![UpdateSource](/images/1/28.png?width=90pc)
-
-      - Run the following commands:
-      ```
-       sam build
-       sam deploy --guided
-      ```
-
-10. Go back to the registration screen and click **Register** button
-![UpdateSource](/images/1/29.png?width=90pc)
-11. Back to the Amazon Cognito console
-       - At **Users** tab, display a user but still in **Unconfirmed** state
-       ![UpdateSource](/images/1/30.png?width=90pc)
-12. Open the email you just registered for an account, get the confirmation code sent from **no-reply@verificationemail.com**
-13. Enter the confirmation code in the verification screen
-       - Click **Submit**
-![UpdateSource](/images/1/31.png?width=90pc)
-
-
-14. Back to the Amazon Cognito console
-       - State of user changed to **Confirmed**
-![UpdateSource](/images/1/32.png?width=90pc)
-
-15. Enter account information: email, password to login
-       - Click **Submit**
-![UpdateSource](/images/1/33.png?width=90pc)
-
-16. After successful login, the features: **Create new book**, **Management**, **Order** appear allowing users to use
-![UpdateSource](/images/1/34.png?width=90pc)
+7. Open your browser with recorded **Bucket website endpoint** url.
+    - Click **Register**.
+      ![TestFrontEnd](/images/temp/1/32.png?width=90pc)
+    - At **FCJ Book Store - Register** page.
+      - Enter your email, password and re-enter password.
+      - Click **Register** button.
+        ![TestFrontEnd](/images/temp/1/33.png?width=90pc)
+    - Open your **Mail** box and record the confirmation code.
+        ![TestFrontEnd](/images/temp/1/34.png?width=90pc)
+    - Back to **Verify Email** page.
+      - Enter the **Confirmation** code you recorded.
+      - Click **Submit** button.
+        ![TestFrontEnd](/images/temp/1/35.png?width=90pc)
+    - After successfully verified email, it will redirect you to **FCJ Book Store - Login** page.
+      - Enter your **Email** and **Password**.
+      - Click **Submit** button.
+        ![TestFrontEnd](/images/temp/1/36.png?width=90pc)
+    - After successful login, the features: **Create new book**, **Management**, **Order** appear allowing users to use.
+      ![TestFrontEnd](/images/temp/1/37.png?width=90pc)

@@ -196,7 +196,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
       ```
       confirmPathPart:
         Type: String
-        Default: confirm
+        Default: confirm_user
       ```
       ![DeployFunction](/images/temp/1/18.png?width=90pc)
 
