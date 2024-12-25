@@ -537,7 +537,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
     ```
     ![DeployFunction](/images/temp/1/24.png?width=90pc)
 
-4. Run the below commands. Leave as default
+4. Run the below commands. Leave as default.
     ```
     sam build
     sam validate
