@@ -1,6 +1,6 @@
 ---
 title : "Clean up"
-date :  "`r Sys.Date()`" 
+date :  2025-02-11
 weight : 5
 chapter : false
 pre : " <b> 5. </b> "
@@ -17,7 +17,7 @@ pre : " <b> 5. </b> "
     - Execute the below command to delete the AWS SAM application.
 
       ```bash
-      sam delete --stack-name fcj-book-store
+      sam delete --stack-name fcj-book-shop
       sam delete --stack-name aws-sam-cli-managed-default
       ```
 

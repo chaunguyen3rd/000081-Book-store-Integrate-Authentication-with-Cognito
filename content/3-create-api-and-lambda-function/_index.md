@@ -1,15 +1,18 @@
 ---
 title : "Create API and Lambda function"
-date :  "`r Sys.Date()`" 
+date :  2025-02-11
 weight : 3
 chapter : false
 pre : " <b> 3. </b> "
 ---
 After creating the User pool, we create an API and a Lambda function to handle user registration and login requests.
+
 #### Preparation
+
 1. Add needed parameters for function to be executed.
     - Copy the below code blocks to **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
-      ```
+
+      ```yml
       cognitoClientID:
         Type: String
         Default: APP_CLIENT_ID
@@ -18,35 +21,43 @@ After creating the User pool, we create an API and a Lambda function to handle u
         Type: String
         Default: APP_CLIENT_SECRET
       ```
+
     - Change **APP_CLIENT_ID** and **APP_CLIENT_SECRET** to the Cognito app clients recorded value before.
-    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/14.png?width=90pc)
+    ![DeployFunction](/images/temp/1/14.png?width=90pc)
 
 2. Create a new ``sam`` deployment.
     - Open **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
     - Comment the code blocks as below.
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/12.png?width=90pc)
+      ![DeployFunction](/images/temp/1/12.png?width=90pc)
     - Run the below commands.
-      ```
+
+      ```bash
       sam build
       sam validate
       sam deploy --guided
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/13.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/13.png?width=90pc)
 
 #### Create Registration function
+
 At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
+
 1. Create **Registration** parameter.
     - Copy and paste the below code block as image below.
-      ```
+
+      ```yml
       registerPathPart:
         Type: String
         Default: register
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/21.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/21.png?width=90pc)
 
 2. Create **Registration** function.
     - Copy and paste the below code blocks to the bottom of the file.
-      ```
+
+      ```yml
       Register:
         Type: AWS::Serverless::Function
         Properties:
@@ -117,10 +128,12 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/16.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/16.png?width=90pc)
 
 3. The directory structure is as below.
-      ```
+
+      ```txt
       fcj-book-shop-sam-ws3
       ├── fcj-book-shop
       │   ├── register
@@ -129,9 +142,11 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
       │
       └── template.yaml
       ```
+
     - Create **register** folder in **fcj-book-shop-sam-ws3/fcj-book-shop/** folder.
     - Create **register.py** file and copy the following code to it.
-      ```
+
+      ```py
       import json
       import boto3
       import os
@@ -187,22 +202,28 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
               print(f"Error registering user: {e}")
               raise Exception(f"Error registering user: {e}")
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/17.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/17.png?width=90pc)
 
 #### Create Confirm function
+
 At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
+
 1. Create **Confirm** parameter.
     - Copy and paste the below code block as image below.
-      ```
+
+      ```yml
       confirmPathPart:
         Type: String
         Default: confirm_user
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/18.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/18.png?width=90pc)
 
 2. Create **Confirm** function.
     - Copy and paste the below code blocks to the bottom of the file.
-      ```
+
+      ```yml
       Confirm:
         Type: AWS::Serverless::Function
         Properties:
@@ -273,10 +294,12 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/19.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/19.png?width=90pc)
 
 3. The directory structure is as below.
-      ```
+
+      ```txt
       fcj-book-shop-sam-ws3
       ├── fcj-book-shop
       │   ├── register
@@ -287,9 +310,11 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
       │
       └── template.yaml
       ```
+
     - Create **confirm_user** folder in **fcj-book-shop-sam-ws3/fcj-book-shop/** folder.
     - Create **confirm_user.py** file and copy the following code to it.
-      ```
+
+      ```py
       import json
       import boto3
       import os
@@ -345,22 +370,28 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
               print(f"Error confirming user: {e}")
               raise Exception(f"Error confirming user: {e}")
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/20.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/20.png?width=90pc)
 
 #### Create Login function
+
 At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that downloaded in preparation.
+
 1. Create **Login** parameter.
     - Copy and paste the below code block as image below.
-      ```
+
+      ```yml
       loginPathPart:
         Type: String
         Default: login
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/15.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/15.png?width=90pc)
 
 2. Create **Login** function.
     - Copy and paste the below code blocks to the bottom of the file.
-      ```
+
+      ```yml
       Login:
         Type: AWS::Serverless::Function
         Properties:
@@ -431,10 +462,12 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
           Principal: apigateway.amazonaws.com
           SourceAccount: !Ref "AWS::AccountId"
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/22.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/22.png?width=90pc)
 
 3. The directory structure is as below.
-      ```
+
+      ```txt
       fcj-book-shop-sam-ws3
       ├── fcj-book-shop
       │   ├── register
@@ -447,9 +480,11 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
       │
       └── template.yaml
       ```
+
     - Create **login** folder in **fcj-book-shop-sam-ws3/fcj-book-shop/** folder.
     - Create **login.py** file and copy the following code to it.
-      ```
+
+      ```py
       import json
       import boto3
       import os
@@ -511,11 +546,14 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
               print(f"Error login: {e}")
               raise Exception(f"Error login: {e}")
       ```
-      ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/23.png?width=90pc)
+
+      ![DeployFunction](/images/temp/1/23.png?width=90pc)
 
 #### Update Stage resource and create new Deployment
+
 1. Uncomment and edit this code block.
-    ```
+
+    ```yml
     BookApiDeployment:
       Type: AWS::ApiGateway::Deployment
       Properties:
@@ -535,14 +573,17 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
         StageName: !Ref stage
         DeploymentId: !Ref BookApiDeployment
     ```
-    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/24.png?width=90pc)
 
-4. Run the below commands. Leave as default.
-    ```
+    ![DeployFunction](/images/temp/1/24.png?width=90pc)
+
+2. Run the below commands. Leave as default.
+
+    ```bash
     sam build
     sam validate
     sam deploy --guided
     ```
-    ![DeployFunction](/000081-Book-store-Integrate-Authentication-with-Cognito/images/temp/1/25.png?width=90pc)
+
+    ![DeployFunction](/images/temp/1/25.png?width=90pc)
 
 We have completed the implementation of the APIs and Lambda functions.
