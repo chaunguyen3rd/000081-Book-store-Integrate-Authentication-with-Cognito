@@ -1,19 +1,19 @@
 ---
-title : "Preparation"
+title : "Chuẩn bị"
 date :  2025-02-11
 weight : 1 
 chapter : false
 pre : " <b> 1. </b> "
 ---
-Before we get to the main content of this workshop, we need to reset the web application.
+Trước khi chúng ta đi vào nội dung chính của workshop này, chúng ta cần thiết lập lại ứng dụng web.
 
-1. Download the below source code.
+1. Tải xuống mã nguồn dưới đây.
 
-    {{%attachments title="Source code" pattern=".*\.(zip)$"/%}}
+    {{%attachments title="Mã nguồn" pattern=".*\.(zip)$"/%}}
 
-2. Run the below commands.
+2. Chạy các lệnh dưới đây.
   {{% notice note %}}
-  Ensure you have the AWS CLI and SAM CLI installed on your machine, configure AWS credentials before running the commands.
+  Đảm bảo bạn đã cài đặt AWS CLI và SAM CLI trên máy của mình, cấu hình thông tin xác thực AWS trước khi chạy các lệnh.
   {{% /notice %}}
 
     ```bash
@@ -22,7 +22,7 @@ Before we get to the main content of this workshop, we need to reset the web app
     sam deploy --guided
     ```
 
-3. Enter the following content. Leave as default.
+3. Nhập nội dung sau. Để mặc định.
     - Stack Name []: `fcj-book-store`
     - AWS Region []: `us-east-1`
     - Confirm changes before deploy [Y/n]: y
@@ -31,54 +31,21 @@ Before we get to the main content of this workshop, we need to reset the web app
     - Save arguments to configuration file [Y/n]: y
       ![Preparation](/images/temp/1/1.png?width=90pc)
 
-4. Download the **FCJ-Serverless-Workshop** code to your device.
-    - Open a terminal on your computer in the folder where you want to save the source code.
-    - Copy the below command.
+4. Tải mã nguồn **fcj-serverless-frontend** về thiết bị của bạn
+    - Mở terminal trên máy tính của bạn tại thư mục nơi bạn muốn lưu mã nguồn.
+    - Sao chép và chạy lệnh dưới đây.
 
       ```bash
       git clone https://github.com/AWS-First-Cloud-Journey/FCJ-Serverless-Workshop.git
       cd FCJ-Serverless-Workshop
-      ```
-
-    - Open **FCJ-Serverless-Workshop** with VSCode and edit.
-      - Open **src/component/Authen/Login.js** and edit as below.
-
-        ```yml
-        data: JSON.stringify({
-            username: email,
-            password: password
-        })
-        ```
-
-        ![Preparation](/images/temp/1/2.png?width=90pc)
-      - Next, open **src/component/Authen/Register.js** and edit as below.
-
-        ```yml
-        data: JSON.stringify({
-          username: email,
-          password: password
-        })
-        ```
-
-        ```yml
-        data: JSON.stringify({
-            username: email,
-            confirmation_code: code
-        })
-        ```
-
-        ![Preparation](/images/temp/1/3.png?width=90pc)
-    - Back to **FCJ-Serverless-Workshop** root path and run the commands below.
-
-      ```yml
       yarn
       yarn build
       ```
 
-5. We have finished building the front-end. Next execute the following command to upload the **build** folder to S3.
+5. Chúng ta đã hoàn thành việc xây dựng front-end. Tiếp theo, thực hiện lệnh sau để tải thư mục **build** lên S3.
 
     ```bash
     aws s3 cp build s3://fcj-book-shop-by-myself --recursive
     ```
 
-So we have rebuilt the web application.
+Vậy là chúng ta đã xây dựng lại ứng dụng web.

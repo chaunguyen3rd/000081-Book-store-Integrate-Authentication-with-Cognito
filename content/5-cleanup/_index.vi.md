@@ -17,8 +17,19 @@ pre : " <b> 5. </b> "
     - Thực hiện lệnh dưới đây để xóa ứng dụng AWS SAM.
 
       ```bash
-      sam delete --stack-name fcj-book-shop
+      sam delete --stack-name fcj-book-store
       sam delete --stack-name aws-sam-cli-managed-default
       ```
 
     - Nếu bạn gặp vấn đề khi xóa bằng lệnh. Mở [AWS Cloudformation console](https://us-east-1.console.aws.amazon.com/cloudformation/home?region=us-east-1#/getting-started). Sau đó, xóa tất cả các stack liên quan đến workshop này.
+
+3. Mở [Amazon Cognito console](https://us-east-1.console.aws.amazon.com/cognito/v2/home?region=us-east-1).
+    - Chọn **User pools** trên menu bên trái.
+    - Chọn **User pool - ...** vừa tạo trước đó.
+    - Nhấp vào nút **Delete**.
+      ![CreateUserPool](/images/temp/1/38.png?width=90pc)
+    - Tại popup **Delete user pool "User pool - ..."?**.
+      - Chọn **Delete Cognito domain ...** và **Deactivate deletion protection**.
+      - Nhập `User pool - ...` vào trường **2. To confirm deletion**.
+      - Nhấp vào nút **Delete**.
+        ![CreateUserPool](/images/temp/1/39.png?width=90pc)

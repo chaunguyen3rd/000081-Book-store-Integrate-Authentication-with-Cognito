@@ -34,7 +34,7 @@ Sau khi tạo User pool, chúng ta tạo một API và một hàm Lambda để x
       ```bash
       sam build
       sam validate
-      sam deploy --guided
+      sam deploy
       ```
 
       ![DeployFunction](/images/temp/1/13.png?width=90pc)
@@ -581,7 +581,7 @@ Tại tệp **template.yaml** trong nguồn của tệp **fcj-book-shop-sam-ws3.
     ```bash
     sam build
     sam validate
-    sam deploy --guided
+    sam deploy 
     ```
 
     ![DeployFunction](/images/temp/1/25.png?width=90pc)

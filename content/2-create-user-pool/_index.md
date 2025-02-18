@@ -10,12 +10,12 @@ pre : " <b> 2. </b> "
     - Click **Create user pool**.
       ![CreateUserPool](/images/temp/1/4.png?width=90pc)
 
-2. At **Set up your application** page.
+2. At **Set up resources for your application** page.
     - Select **Traditional web application**.
-    - Enter **cognito-fcj-book-shop** at **Name your application** field.
+    - Enter `cognito-fcj-book-shop` at **Name your application** field.
       ![CreateUserPool](/images/temp/1/5.png?width=90pc)
     - Scroll down, select **Email** at **Configure options** box.
-    - Click **Create** button.
+    - Click **Create user directory** button.
       ![CreateUserPool](/images/temp/1/6.png?width=90pc)
 
 3. Back to **Amazon Cognito** management console.

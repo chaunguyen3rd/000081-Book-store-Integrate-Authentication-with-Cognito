@@ -24,6 +24,7 @@ We will try registration and login from web application to test API Gateway, Lam
 
     ```bash
     yarn build
+    aws s3 rm s3://fcj-book-shop-by-myself --recursive
     aws s3 cp build s3://fcj-book-shop-by-myself --recursive
     ```
 

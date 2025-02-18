@@ -1,5 +1,5 @@
 ---
-title : "Kiểm tra hoạt động"
+title : "Kiểm tra với front-end"
 date :  2025-02-11
 weight : 4
 chapter : false
@@ -24,34 +24,35 @@ Chúng ta sẽ thử đăng ký và đăng nhập từ ứng dụng web để ki
 
     ```bash
     yarn build
+    aws s3 rm s3://fcj-book-shop-by-myself --recursive
     aws s3 cp build s3://fcj-book-shop-by-myself --recursive
     ```
 
 4. Mở [Amazon S3 console](https://s3.console.aws.amazon.com/s3/buckets?region=us-east-1).
-    - Nhấp vào **fcj-book-shop-by-myself** bucket.
+    - Nhấp vào bucket **fcj-book-shop-by-myself**.
       ![TestFrontEnd](/images/temp/1/29.png?width=90pc)
     - Tại trang **fcj-book-shop-by-myself**.
       - Nhấp vào tab **Properties**.
         ![TestFrontEnd](/images/temp/1/30.png?width=90pc)
-      - Cuộn xuống dưới cùng và ghi lại url **Bucket website endpoint**.
+      - Cuộn xuống cuối trang và ghi lại url **Bucket website endpoint**.
         ![TestFrontEnd](/images/temp/1/31.png?width=90pc)
 
 5. Mở trình duyệt của bạn với url **Bucket website endpoint** đã ghi lại.
-    - Nhấp vào **Đăng ký**.
+    - Nhấp vào **Register**.
       ![TestFrontEnd](/images/temp/1/32.png?width=90pc)
-    - Tại trang **FCJ Book Store - Đăng ký**.
+    - Tại trang **FCJ Book Store - Register**.
       - Nhập email, mật khẩu và nhập lại mật khẩu của bạn.
-      - Nhấp vào nút **Đăng ký**.
+      - Nhấp vào nút **Register**.
         ![TestFrontEnd](/images/temp/1/33.png?width=90pc)
-    - Mở hộp thư **Email** của bạn và ghi lại mã xác nhận.
-      ![TestFrontEnd](/images/temp/1/34.png?width=90pc)
-    - Quay lại trang **Xác minh Email**.
-      - Nhập mã **Xác nhận** mà bạn đã ghi lại.
-      - Nhấp vào nút **Gửi**.
+    - Mở hộp thư **Mail** của bạn và ghi lại mã xác nhận.
+        ![TestFrontEnd](/images/temp/1/34.png?width=90pc)
+    - Quay lại trang **Verify Email**.
+      - Nhập mã **Confirmation** bạn đã ghi lại.
+      - Nhấp vào nút **Submit**.
         ![TestFrontEnd](/images/temp/1/35.png?width=90pc)
-    - Sau khi xác minh email thành công, bạn sẽ được chuyển hướng đến trang **FCJ Book Store - Đăng nhập**.
-      - Nhập **Email** và **Mật khẩu** của bạn.
-      - Nhấp vào nút **Gửi**.
+    - Sau khi xác minh email thành công, nó sẽ chuyển hướng bạn đến trang **FCJ Book Store - Login**.
+      - Nhập **Email** và **Password** của bạn.
+      - Nhấp vào nút **Submit**.
         ![TestFrontEnd](/images/temp/1/36.png?width=90pc)
-    - Sau khi đăng nhập thành công, các tính năng: **Tạo sách mới**, **Quản lý**, **Đặt hàng** sẽ xuất hiện cho phép người dùng sử dụng.
+    - Sau khi đăng nhập thành công, các tính năng: **Create new book**, **Management**, **Order** xuất hiện cho phép người dùng sử dụng.
       ![TestFrontEnd](/images/temp/1/37.png?width=90pc)

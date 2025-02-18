@@ -34,7 +34,7 @@ After creating the User pool, we create an API and a Lambda function to handle u
       ```bash
       sam build
       sam validate
-      sam deploy --guided
+      sam deploy
       ```
 
       ![DeployFunction](/images/temp/1/13.png?width=90pc)
@@ -581,7 +581,7 @@ At **template.yaml** file in source of **fcj-book-shop-sam-ws3.zip** file that d
     ```bash
     sam build
     sam validate
-    sam deploy --guided
+    sam deploy
     ```
 
     ![DeployFunction](/images/temp/1/25.png?width=90pc)
